@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_4" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.4">
+	<Header>
+		<Application name="JPMML-SkLearn library" version="1.7.8"/>
+		<Timestamp>2022-06-14T00:09:44Z</Timestamp>
+	</Header>
+	<MiningBuildTask>
+		<Extension name="repr">PMMLPipeline(steps=[('linear regression', LinearRegression())])</Extension>
+	</MiningBuildTask>
+	<DataDictionary>
+		<DataField name="median_house_value" optype="continuous" dataType="double"/>
+		<DataField name="x1" optype="continuous" dataType="double"/>
+		<DataField name="x2" optype="continuous" dataType="double"/>
+		<DataField name="x3" optype="continuous" dataType="double"/>
+		<DataField name="x4" optype="continuous" dataType="double"/>
+		<DataField name="x5" optype="continuous" dataType="double"/>
+		<DataField name="x6" optype="continuous" dataType="double"/>
+		<DataField name="x7" optype="continuous" dataType="double"/>
+		<DataField name="x8" optype="continuous" dataType="double"/>
+		<DataField name="x9" optype="continuous" dataType="double"/>
+		<DataField name="x10" optype="continuous" dataType="double"/>
+		<DataField name="x11" optype="continuous" dataType="double"/>
+		<DataField name="x12" optype="continuous" dataType="double"/>
+		<DataField name="x13" optype="continuous" dataType="double"/>
+		<DataField name="x14" optype="continuous" dataType="double"/>
+		<DataField name="x15" optype="continuous" dataType="double"/>
+		<DataField name="x16" optype="continuous" dataType="double"/>
+		<DataField name="x17" optype="continuous" dataType="double"/>
+	</DataDictionary>
+	<RegressionModel functionName="regression" algorithmName="sklearn.linear_model._base.LinearRegression">
+		<MiningSchema>
+			<MiningField name="median_house_value" usageType="target"/>
+			<MiningField name="x1"/>
+			<MiningField name="x2"/>
+			<MiningField name="x3"/>
+			<MiningField name="x4"/>
+			<MiningField name="x5"/>
+			<MiningField name="x6"/>
+			<MiningField name="x7"/>
+			<MiningField name="x8"/>
+			<MiningField name="x9"/>
+			<MiningField name="x10"/>
+			<MiningField name="x11"/>
+			<MiningField name="x12"/>
+			<MiningField name="x13"/>
+			<MiningField name="x14"/>
+			<MiningField name="x15"/>
+			<MiningField name="x16"/>
+			<MiningField name="x17"/>
+		</MiningSchema>
+		<RegressionTable intercept="-1.1329196478213264E17">
+			<NumericPredictor name="x1" coefficient="-56076.25034936416"/>
+			<NumericPredictor name="x2" coefficient="-56982.144285754395"/>
+			<NumericPredictor name="x3" coefficient="14384.251098549857"/>
+			<NumericPredictor name="x4" coefficient="-4991.685016711589"/>
+			<NumericPredictor name="x5" coefficient="12275.05312375033"/>
+			<NumericPredictor name="x6" coefficient="-43824.45216503411"/>
+			<NumericPredictor name="x7" coefficient="41274.61236448264"/>
+			<NumericPredictor name="x8" coefficient="63264.40150357827"/>
+			<NumericPredictor name="x9" coefficient="13588.125380197425"/>
+			<NumericPredictor name="x10" coefficient="6736.567498105731"/>
+			<NumericPredictor name="x11" coefficient="864.2199900738398"/>
+			<NumericPredictor name="x12" coefficient="10276.054323427423"/>
+			<NumericPredictor name="x13" coefficient="1.1329196478235072E17"/>
+			<NumericPredictor name="x14" coefficient="1.13291964782315216E17"/>
+			<NumericPredictor name="x15" coefficient="1.13291964782488992E17"/>
+			<NumericPredictor name="x16" coefficient="1.13291964782345392E17"/>
+			<NumericPredictor name="x17" coefficient="1.13291964782354752E17"/>
+		</RegressionTable>
+	</RegressionModel>
+</PMML>
