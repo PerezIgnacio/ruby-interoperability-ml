@@ -1,4 +1,5 @@
 require './lib/onnx/image_detection_model'
 
+# Load model here to avoid initializing it in every request.
 Onnx::ImageDetectionModel.model_path = Rails.root.join('lib', 'onnx', 'model.onnx')
 Onnx::ImageDetectionModel.load_model

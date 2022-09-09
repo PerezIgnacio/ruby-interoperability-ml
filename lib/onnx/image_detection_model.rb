@@ -12,7 +12,7 @@ module Onnx
       def model_path
         return @@model_path unless @@model_path.blank?
 
-        raise "Model path not configured. Do ImageDetectionModel.model_path = 'my_path'"
+        raise "Model path not configured. Use ImageDetectionModel.model_path = 'my_path'"
       end
 
       def predict(image_pixels)
