@@ -1,4 +1,4 @@
-class ImageProcessor
+class ImageProcessingService
   COCO_LABELS = {
     17 => 'cat',
     18 => 'dog',
@@ -12,10 +12,10 @@ class ImageProcessor
         label = COCO_LABELS[label] || label
         box = result["detection_boxes"][index][i]
 
-        image_with_prediction = draw_box(image, label, box)
-        image_with_prediction.write("data/labeled1.jpg")
+        draw_box(image, label, box)
       end
     end
+    image
   end
 
   private
@@ -34,14 +34,14 @@ class ImageProcessor
     img.combine_options do |c|
       c.draw "rectangle #{left},#{top} #{right},#{bottom}"
       c.fill "none"
-      c.stroke "red"
+      c.stroke "blue"
       c.strokewidth thickness
     end
 
     # draw text
     img.combine_options do |c|
-      c.draw "text #{left},#{top - 5} \"#{label}\""
-      c.fill "red"
+      c.draw "text #{left + 5},#{top + 16} \"#{label}\""
+      c.fill "blue"
       c.pointsize 18
     end
   end

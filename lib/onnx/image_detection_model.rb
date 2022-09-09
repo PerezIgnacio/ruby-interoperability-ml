@@ -1,23 +1,23 @@
-require 'onnxruntime'
+module Onnx
+  module ImageDetectionModel
+    class << self
+      def load_model
+        @@model = OnnxRuntime::Model.new(model_path)
+      end
 
-class ImageDetectionModel
-  attr_accessor :model
+      def model_path=(model_path)
+        @@model_path = model_path
+      end
 
-  def initialize
-    @model = load_model
-  end
+      def model_path
+        return @@model_path unless @@model_path.blank?
 
-  def predict(image_pixels)
-    model.predict({inputs: [image_pixels]})
-  end
+        raise "Model path not configured. Do ImageDetectionModel.model_path = 'my_path'"
+      end
 
-  private
-
-  def load_model
-    OnnxRuntime::Model.new(file_path)
-  end
-
-  def file_path
-    File.join(__dir__, 'model.onnx')
+      def predict(image_pixels)
+        @@model.predict({inputs: [image_pixels]})
+      end
+    end
   end
 end

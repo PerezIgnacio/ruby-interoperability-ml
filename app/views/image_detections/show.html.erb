@@ -1,0 +1,13 @@
+<h3 class="mt-4"> Image Prediction </h3>
+<div data-controller="image-preview" class="main-content">
+  <%= image_tag "", class: 'input-image', data: { image_preview_target: 'output' } %>
+  <%= form_with url: image_detections_path, class: 'd-flex flex-column align-items-center' do |f| %>
+    <div>
+      <%= f.label 'Upload Image', for: 'upload-image', class: 'btn btn-light' %>
+      <%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg', class: 'd-none', id: 'upload-image',
+                              data: { image_preview_target: 'input', action: 'image-preview#setImageUrl image-preview#enablePredict' } %>
+      <%= f.submit 'Predict', class: 'btn btn-light', disabled: true, data: { image_preview_target: 'predict'} %>
+    </div>
+  <% end %>
+  <div id="prediction"></div>
+</div>
