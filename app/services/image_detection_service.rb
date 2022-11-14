@@ -1,7 +1,5 @@
 class ImageDetectionService
-  def predict(uploaded_file)
-    image = MiniMagick::Image.read(uploaded_file.read)
-    result = Onnx::ImageDetectionModel.predict(image.get_pixels)
-    ImageProcessingService.new.label_prediction(image, result)
+  def predict(model_name, uploaded_file)
+    model_name.camelize.constantize::PredictionService.new.predict(uploaded_file)
   end
 end
