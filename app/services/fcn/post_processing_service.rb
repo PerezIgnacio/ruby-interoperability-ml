@@ -20,9 +20,12 @@ module Fcn
     end
 
     def color_from_label_index(index)
+      color_palette[index]
+    end
+
+    def color_palette
       # 27 in total. Only need 21 (number of possible labels from model).
-      possible_colors = [0, 128, 255].repeated_permutation(3).to_a
-      possible_colors[index]
+      @color_palette ||= [0, 128, 255].repeated_permutation(3).to_a
     end
 
     def generate_predicted_image(image, labeled_pixels)
