@@ -11,7 +11,7 @@ module Fcn
 
       result = Onnx::Models.predict(:fcn, { input: [input] })
 
-      PostProcessingService.new.postprocess(image: image, result: result)
+      ImageProcessingService.new.process(image: image, result: result)
     end
   end
 end

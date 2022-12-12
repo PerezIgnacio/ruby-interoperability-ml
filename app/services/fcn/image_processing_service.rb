@@ -1,8 +1,8 @@
 require 'numo/narray'
 
 module Fcn
-  class PostProcessingService
-    def postprocess(image:, result:)
+  class ImageProcessingService
+    def process(image:, result:)
       # Get predicted class
       raw_labels = Numo::DFloat.cast(result['out'][0]).argmax(axis: 0)
       colorized_labels = colorize_labels(raw_labels)
